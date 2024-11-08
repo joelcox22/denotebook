@@ -8,20 +8,20 @@ Users beware: I intend to make plenty of semver-major changes over time on a whi
 This is not a community driven project - it's a personal library that I'm making
 publicly available to make my own usage easy to share. Feel free to fork it.
 
+## Recommended usage pattern
+
+Add an import for `denotebook` to your `deno.json` mapping to this project. 
+
+```json deno.json
+{
+  "imports": {
+    "denotebook": "jsr:joelcox22/denotebook"
+  }
+}
+```
+
+Doing this will allow you to easily fork the denotebook repo and easily update your projects to use your fork if desired, while also keeping all examples / tests clear and copy+pasteable.
+
 ## Examples
 
-### Sankey
-
-```typescript
-import { sankey } from 'jsr:joelcox22/denotebook';
-
-sankey([
-  ['a', 'b', 15],
-  ['a', 'c', 75],
-  ['b', 'd', 25],
-  ['c', 'd', 50],
-  ['b', 'e', 40],
-  ['x', 'b', 50],
-  ['c', 'e', 25],
-]);
-```
+See the [tests](./tests/) directory for notebooks full of examples.
