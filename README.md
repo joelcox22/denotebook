@@ -2,6 +2,12 @@
 
 The goal of this project is to consolidate a bunch of easy-to-use helper methods that render well in Github when used from Deno Jupyter notebooks.
 
+Some things might be dumb / easy to replicate with deno built-in methods, and that's OK - my goal is to have a single go-to package for easy rendering methods that I have clear simple examples for, which all work in roughly the same way.
+
+All methods should actually display the results without needing to be the last thing returned by a code block in a notebook cell.
+
+Long term I'll aim for style consistency across all components, but that's not an important short-term goal.
+
 ## Recommended usage pattern
 
 Add an import for `denotebook` to your `deno.json` mapping to this project. 
