@@ -2,5 +2,8 @@
   "name": "@joelcox22/denotebook",
   "version": "0.1.2",
   "license": "MIT",
-  "exports": "./mod.ts"
+  "exports": "./mod.ts",
+  "imports": {
+    "denotebook": "./mod.ts"
+  }
 }
