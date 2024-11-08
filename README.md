@@ -8,6 +8,8 @@ All methods should actually display the results without needing to be the last t
 
 Long term I'll aim for style consistency across all components, but that's not an important short-term goal.
 
+This is generally the place where I want all the hacky things that make everything look easy and clear elsewhere to be abstracted away.
+
 ## Recommended usage pattern
 
 Add an import for `denotebook` to your `deno.json` mapping to this project. 
