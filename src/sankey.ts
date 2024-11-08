@@ -27,10 +27,16 @@ export function sankey2(data: SankeyEntry[]): void {
   dom.window.document.body.appendChild(el);
   const nodes = data.flatMap(([from, to]) => [from, to]).filter((v, i, a ) => a.indexOf(v) === i).map((name) => ({ name }));
   const links = data.flatMap(([source, target, value]) => ({ source, target, value }));
-  console.log({ nodes, links });
   const chart = new SankeyChart({
+    width: 600,
+    height: 300,
+    circularLinkPortionTopBottom: 0,
+    circularLinkPortionLeftRight: 0,
     nodes: {
       data: nodes,
+      width: 10,
+      padding: 3,
+      minPadding: 1,
     },
     links: {
       data: links,
@@ -38,5 +44,5 @@ export function sankey2(data: SankeyEntry[]): void {
   });
   chart.process();
   chart.draw('sankey');
-  Deno.jupyter.display(Deno.jupyter.svg`${globalThis.document.body.innerHTML}`);
+  Deno.jupyter.display(Deno.jupyter.svg`${el.innerHTML}`);
 }
