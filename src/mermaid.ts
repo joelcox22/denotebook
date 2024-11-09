@@ -20,7 +20,7 @@ let config: any = {...defaultConfig};
 
 export async function mermaid(graph: string | TemplateStringsArray): Promise<void> {
   const mmd = `---\n${stringify(config)}---\n${graph.toString()}`;
-  const { data } = await renderMermaid(browser, mmd, 'svg', {
+  const { data } = await renderMermaid(browser, mmd, 'png', {
     mermaidConfig: {
       htmlLabels: false,
     },
@@ -31,7 +31,8 @@ export async function mermaid(graph: string | TemplateStringsArray): Promise<voi
       //#my-svg .arrowMarkerPath { fill: var(--jp-ui-font-color0); stroke: none; }
     //`,
   });
-  Deno.jupyter.display(Deno.jupyter.html`${Buffer.from(data).toString()}`);
+  const dataUri = `data:image/png;base64,${Buffer.from(data).toString('base64')}`;
+  Deno.jupyter.display(Deno.jupyter.html`<img src="${dataUri}" />`);
 }
 
 mermaid.configure = function(newConfig: any): void {
