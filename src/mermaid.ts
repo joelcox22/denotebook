@@ -12,7 +12,7 @@ console.warn = oldLog;
 
 const defaultConfig: any = {
   config: {
-    theme: 'base',
+    theme: 'default',
   },
 };
 
@@ -20,14 +20,16 @@ let config: any = {...defaultConfig};
 
 export async function mermaid(graph: string | TemplateStringsArray): Promise<void> {
   const mmd = `---\n${stringify(config)}---\n${graph.toString()}`;
-  console.log(mmd);
   const { data } = await renderMermaid(browser, mmd, 'svg', {
-    backgroundColor: 'transparent',
-    myCSS: `
-      #my-svg .flowchartTitleText { fill: var(--jp-ui-inverse-font-color0); }
-      #my-svg .flowchart-link { stroke: var(--jp-ui-inverse-font-color0); }
-      #my-svg .arrowMarkerPath { fill: var(--jp-ui-font-color0); stroke: none; }
-    `,
+    mermaidConfig: {
+      htmlLabels: false,
+    },
+    // backgroundColor: 'rgba(0, 0, 0, 0.5)',
+    //myCSS: `
+      //#my-svg .flowchartTitleText { fill: var(--jp-ui-inverse-font-color0); }
+      //#my-svg .flowchart-link { stroke: var(--jp-ui-inverse-font-color0); }
+      //#my-svg .arrowMarkerPath { fill: var(--jp-ui-font-color0); stroke: none; }
+    //`,
   });
   Deno.jupyter.display(Deno.jupyter.svg`${Buffer.from(data).toString()}`);
 }
