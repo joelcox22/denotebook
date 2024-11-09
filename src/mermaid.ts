@@ -12,7 +12,7 @@ console.warn = oldLog;
 
 const defaultConfig: any = {
   config: {
-    theme: 'default',
+    theme: 'dark',
   },
 };
 
@@ -24,12 +24,7 @@ export async function mermaid(graph: string | TemplateStringsArray): Promise<voi
     mermaidConfig: {
       htmlLabels: false,
     },
-    // backgroundColor: 'rgba(0, 0, 0, 0.5)',
-    //myCSS: `
-      //#my-svg .flowchartTitleText { fill: var(--jp-ui-inverse-font-color0); }
-      //#my-svg .flowchart-link { stroke: var(--jp-ui-inverse-font-color0); }
-      //#my-svg .arrowMarkerPath { fill: var(--jp-ui-font-color0); stroke: none; }
-    //`,
+    backgroundColor: '#333333',
   });
   const dataUri = `data:image/png;base64,${Buffer.from(data).toString('base64')}`;
   Deno.jupyter.display(Deno.jupyter.html`<img src="${dataUri}" />`);
