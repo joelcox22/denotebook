@@ -15,9 +15,9 @@ let config: any = {};
 export async function mermaid(graph: string | TemplateStringsArray): Promise<void> {
   const mmd = `---\n${stringify(config)}---\n${graph.toString()}`;
   const { data } = await renderMermaid(browser, mmd, 'svg', {
-    backgroundColor: 'transparent',
+    // backgroundColor: 'transparent',
     mermaidConfig: {
-      theme: 'dark',
+      // theme: 'dark',
     },
   });
   Deno.jupyter.display(Deno.jupyter.svg`${Buffer.from(data).toString()}`);
