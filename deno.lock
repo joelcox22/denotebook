@@ -1,17 +1,30 @@
 {
   "version": "4",
   "specifiers": {
+    "jsr:@std/collections@*": "1.0.8",
+    "jsr:@std/collections@1": "1.0.8",
+    "jsr:@std/yaml@1": "1.0.5",
     "npm:@mermaid-js/mermaid-cli@11.4.0": "11.4.0_puppeteer@23.7.1__devtools-protocol@0.0.1354347",
+    "npm:@types/node@*": "22.5.4",
     "npm:d3-sankey-diagram@0.8.0": "0.8.0",
     "npm:d3-sankey@0.12.3": "0.12.3",
     "npm:d3@*": "7.9.0_d3-selection@3.0.0",
     "npm:d3@3": "3.5.17",
     "npm:d3@4": "4.13.0",
     "npm:jsdom@*": "25.0.1",
+    "npm:lodash@4.17.21": "4.17.21",
     "npm:mermaid@11.4.0": "11.4.0_cytoscape@3.30.3",
     "npm:puppeteer@23.7.1": "23.7.1_devtools-protocol@0.0.1354347",
     "npm:sankey-plus@0.7.0": "0.7.0",
     "npm:yaml@2.6.0": "2.6.0"
+  },
+  "jsr": {
+    "@std/collections@1.0.8": {
+      "integrity": "de76692f9121838711b1d2fb5042619c074db26905a87b58cff56cfe1bd6d6d0"
+    },
+    "@std/yaml@1.0.5": {
+      "integrity": "71ba3d334305ee2149391931508b2c293a8490f94a337eef3a09cade1a2a2742"
+    }
   },
   "npm": {
     "@antfu/install-pkg@0.4.1": {
