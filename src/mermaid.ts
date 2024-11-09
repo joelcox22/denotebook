@@ -31,7 +31,7 @@ export async function mermaid(graph: string | TemplateStringsArray): Promise<voi
       //#my-svg .arrowMarkerPath { fill: var(--jp-ui-font-color0); stroke: none; }
     //`,
   });
-  Deno.jupyter.display(Deno.jupyter.svg`${Buffer.from(data).toString()}`);
+  Deno.jupyter.display(Deno.jupyter.html`${Buffer.from(data).toString()}`);
 }
 
 mermaid.configure = function(newConfig: any): void {
