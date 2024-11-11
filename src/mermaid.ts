@@ -6,7 +6,7 @@ import { deepMerge } from 'jsr:@std/collections@^1';
 
 type MermaidConfig = {
   /**
-   * @default html
+   * @default png
    */
   outputFormat: 'svg' | 'html' | 'png' | 'pdf';
   config: {
@@ -19,7 +19,7 @@ type MermaidConfig = {
 }
 
 const defaultConfig: MermaidConfig = {
-  outputFormat: 'html',
+  outputFormat: 'png',
   config: {
     theme: 'dark',
   },
