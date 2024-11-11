@@ -66,4 +66,6 @@ mermaid.configure = function(newConfig: Partial<MermaidConfig>): void {
   config = deepMerge(config, newConfig);
 }
 
-mermaid.resetConfig = () => config = { ...defaultConfig };
+mermaid.resetConfig = (): void => {
+  config = { ...defaultConfig };
+};
