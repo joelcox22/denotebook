@@ -1,27 +1,29 @@
 # Denotebook
 
-Random helper methods for use with Deno + Jupyter notebooks.
+The goal of this project is to consolidate a bunch of easy-to-use helper methods that render well in Github when used from Deno Jupyter notebooks.
 
-Goal is easy-to-use helper methods that render well in Github.
+Some things might be dumb / easy to replicate with deno built-in methods, and that's OK - my goal is to have a single go-to package for easy rendering methods that I have clear simple examples for, which all work in roughly the same way.
 
-Users beware: I intend to make plenty of semver-major changes over time on a whim.
-This is not a community driven project - it's a personal library that I'm making
-publicly available to make my own usage easy to share. Feel free to fork it.
+All methods should actually display the results without needing to be the last thing returned by a code block in a notebook cell.
+
+Long term I'll aim for style consistency across all components, but that's not an important short-term goal.
+
+This is generally the place where I want all the hacky things that make everything look easy and clear elsewhere to be abstracted away.
+
+## Recommended usage pattern
+
+Add an import for `denotebook` to your `deno.json` mapping to this project. 
+
+```json deno.json
+{
+  "imports": {
+    "denotebook": "jsr:joelcox22/denotebook"
+  }
+}
+```
+
+Doing this will allow you to easily fork the denotebook repo and easily update your projects to use your fork if desired, while also keeping all examples / tests clear and copy+pasteable.
 
 ## Examples
 
-### Sankey
-
-```typescript
-import { sankey } from 'jsr:joelcox22/denotebook';
-
-sankey([
-  ['a', 'b', 15],
-  ['a', 'c', 75],
-  ['b', 'd', 25],
-  ['c', 'd', 50],
-  ['b', 'e', 40],
-  ['x', 'b', 50],
-  ['c', 'e', 25],
-]);
-```
+See the [tests](./tests/) directory for notebooks full of examples.
